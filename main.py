@@ -1,16 +1,32 @@
-# This is a sample Python script.
+#the main program calls all exercises from 1 to 9
+#you can run here all exercises or start the single programs one by one
 
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Strg+F8 to toggle the breakpoint.
+print("Exercise1 - Famous quote")
+import Exercise1
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+print('\n' "Exercise2 - Number eight")
+import Exercise2
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print('\n' "Exercise3 - Formatting")
+import Exercise3
+
+print('\n' "Exercise4 - Swap 2 numbers")
+import Exercise4
+
+print('\n' "Exercise5 - Modulo check")
+import Exercise5
+
+print('\n' "Exercise6 - Summarizer")
+import Exercise6
+
+print('\n' "Exercise7 - Sequencer")
+import Exercise7
+
+print('\n' "Exercise8  - String check")
+import Exercise8
+
+print('\n' "Exercise9  -  ASCII Art")
+import Exercise9
+
+
