@@ -8,6 +8,6 @@ def triangle(rows):
         print(pattern)
 
 
-my_rows = e.interval_entry(" rows for triangle", 1, 49)
+my_rows = e.interval_entry(" rows for triangle", 1, 80)
 
 triangle(my_rows)

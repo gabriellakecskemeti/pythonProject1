@@ -1,5 +1,4 @@
-#the main program calls all exercises from 1 to 9
-#you can run here all exercises or start the single programs one by one
+
 
 print("Exercise1 - Famous quote")
 import Exercise1
