@@ -2,21 +2,14 @@
 UNDER CONSTRUCTION
 selection=""
 while True:
-    print(
-    ***************************
-    *   Menu for home work    *
-    ***************************
-    1.Famous quote
-    2.Number Eight
-    3.Formatting name and age
-    4.Swap two numbers
-    5.Modulo check
-    6.Summarizer
-    7.Sequencer
-    8.String check
-    9.ASCII Art
-    0.Exit
-    )
+    print("********************************************")
+    print("*           Menu for home work             *")
+    print("********************************************")
+    print("1.Famous quote              6.Summarizer")
+    print("2.Number Eight              7.Sequencer")
+    print("3.Formatting name and age   8.String check")
+    print("4.Swap two numbers          9.ASCII Art")
+    print("5.Modulo check              0.Exit")
     selection = input("What would you like to do? ")
     if selection=="1":
         import Exercise1
