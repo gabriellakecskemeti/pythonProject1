@@ -3,12 +3,12 @@ def enter_number(name_of_number):
         try:
             number = int(input(f"Please enter a number!  {name_of_number}= "))
             break
-        except:
+        except ValueError:
             print("Only numbers, please!")
     return number
 
 
-def interval_entry(name_of_number,interval_from, interval_to):
+def interval_entry(name_of_number, interval_from, interval_to):
     while True:
         try:
             entered_number = int(input(f"Please enter a number! {name_of_number}= "))
@@ -17,5 +17,5 @@ def interval_entry(name_of_number,interval_from, interval_to):
                 break
             else:
                 print(f"That's not a valid option!Only numbers between {interval_from} and {interval_to}, please!")
-        except:
+        except ValueError:
             print("That's not a valid option!Only numbers between  {interval_from} and {interval_to} , please!")

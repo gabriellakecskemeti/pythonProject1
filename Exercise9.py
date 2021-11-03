@@ -1,10 +1,10 @@
 import Number_Entry as e
 
+
 def triangle(rows):
-    x=0
-    pattern=""
-    for x in range(0,rows):
-        pattern = pattern+"*  "
+    pattern = ""
+    for x in range(0, rows):
+        pattern = pattern + "*  "
         print(pattern)
 
 

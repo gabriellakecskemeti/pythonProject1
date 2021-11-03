@@ -1,16 +1,14 @@
-
-
 def enter_number(name_of_number):
     """
     function asks one number and check the entered value, it gives an error message if it is not an integer
-    :param name_of_number: a text to say to the user which kind of number do you ask, eg. age, intervall etc.
+    :param name_of_number: a text to say to the user which kind of number do you ask, eg. age, interval etc.
     :return: entered number
     """
     while True:
         try:
             number = int(input(f"Please enter a number!  {name_of_number}= "))
             break
-        except:
+        except ValueError:
             print("Only numbers, please!")
 
     return number
@@ -23,7 +21,7 @@ def enter_number(name_of_number):
 def number_between(name_of_number, between_from, between_to):
     """
     function asks an integer number in a given interval
-    :param name_of_number: a text to say to the user which kind of number do you ask, eg. age, intervall etc.
+    :param name_of_number: a text to say to the user which kind of number do you ask, eg. age, interval etc.
     :param between_from:
     :param between_to:
     :return:
@@ -34,10 +32,10 @@ def number_between(name_of_number, between_from, between_to):
             entered_number = int(input(f"Please enter a number! {name_of_number}= "))
             if between_from <= entered_number <= between_to:
                 return entered_number
-                break
+                # break
             else:
                 print(f"That's not a valid option! Only numbers between {between_from} and {between_to}, please!")
-        except:
+        except ValueError:
             print("That's not a valid option! Only numbers between  {between_from} and {between_to} , please!")
 
 
@@ -91,7 +89,7 @@ def name_age():
                 break
             else:
                 print("That's not a valid option!Only numbers between 1-200, please!")
-        except:
+        except ValueError:
             print("That's not a valid option!Only numbers between 1-200, please!")
 
     text1 = "Hello, "
@@ -137,16 +135,16 @@ def check_numbers(my_number1, my_number2):
     result_mod10 = False
 
     if number1_mod6 == 0 or number2_mod6 == 0:
-        print("Minimum one number is divisible by 6")
+        print("Minimum one number is dividable by 6")
         result_mod6 = True
     else:
-        print("None of these numbers is divisible by 6")
+        print("None of these numbers is dividable by 6")
 
     if number1_mod10 == 0 and number2_mod10 == 0:
-        print("Both numbers are divisible by 10")
+        print("Both numbers are dividable by 10")
         result_mod10 = True
     else:
-        print("Both numbers are not divisible by 10")
+        print("Both numbers are not dividable by 10")
 
     if result_mod6 and result_mod10:
         return True
@@ -167,12 +165,12 @@ def sum_up(sumup_from, sumup_to):
         print("Not valid interval, the second number is smaller than the first! Try it again!")
 
     else:
-        sum = 0
+        total = 0
         for x in range(sumup_from, sumup_to + 1):
-            sum = sum + x
+            total = total + x
             print(f"+  {x} ")
 
-        print(f"= {sum}")
+        print(f"= {total}")
 
 
 number1 = enter_number("sum up from")
@@ -184,25 +182,24 @@ print('\n' "Exercise7 - Sequencer")
 
 
 def sequence(snum):
+    new_sequence = ""
     if snum < 0 or snum > 9:
         print("Number must be between 0 and 9. Please try it again")
+
     else:
-        sequence = ""
-        i = 0
         for i in range(0, 10):
             if i != snum:
-                sequence = sequence + str(i) + " "
+                new_sequence = new_sequence + str(i) + " "
 
-    print(sequence)
+    print(new_sequence)
 
 
-takeoff = enter_number("number")
+dropout = number_between("I want to drop out the number ", 0, 9)
 
-sequence(takeoff)
+sequence(dropout)
 
 # *****************************************************************Ex.8
 print('\n' "Exercise8  - String check")
-
 
 
 def check_string(text):
@@ -219,13 +216,11 @@ if check_string(my_text):  # check the text and write the result to the console
 else:
     print("Your text was checked. The first and last character is not an 'A'")
 
-
 # *****************************************************************Ex.9
 print('\n' "Exercise9  -  ASCII Art")
 
 
 def triangle(rows):
-    x = 0
     pattern = ""
     for x in range(0, rows):
         pattern = pattern + "*  "
@@ -235,4 +230,3 @@ def triangle(rows):
 my_rows = number_between(" rows for triangle", 1, 80)
 
 triangle(my_rows)
-
