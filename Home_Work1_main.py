@@ -221,10 +221,11 @@ print('\n' "Exercise9  -  ASCII Art")
 
 
 def triangle(rows):
-    pattern = ""
+    #pattern = ""
     for x in range(0, rows):
-        pattern = pattern + "*  "
-        print(pattern)
+        print((x+1)*"*  ")
+        #pattern = pattern + "*  "
+        #print(pattern)
 
 
 my_rows = number_between(" rows for triangle", 1, 80)
