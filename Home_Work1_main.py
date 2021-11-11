@@ -14,17 +14,14 @@ def enter_number(name_of_number):
     return number
 
 
-#
-# name_of_number = a text for asking the number
-# between_from, between_to = integer values to define the interval
-# only numbers in the given interval are accepted
+
 def number_between(name_of_number, between_from, between_to):
     """
     function asks an integer number in a given interval
     :param name_of_number: a text to say to the user which kind of number do you ask, eg. age, interval etc.
     :param between_from:
     :param between_to:
-    :return:
+    :return: selected number-int
     """
 
     while True:
@@ -39,194 +36,227 @@ def number_between(name_of_number, between_from, between_to):
             print("That's not a valid option! Only numbers between  {between_from} and {between_to} , please!")
 
 
-# *********************************************************+**Ex.1
-# function gives out my favourite quote
-print("Exercise1 - Famous quote")
 
 
-def famous_quote(quote):
-    """
+def exercise1():
+    print("Exercise1 - Famous quote")
 
-    :param quote:
-    :return:
-    """
-    print(quote)
-    return
+    # *********************************************************+**Ex.1
+    # function gives out my favourite quote
+    def famous_quote(quote):
+        """
 
+        :param quote:
+        :return:
+        """
+        print(quote)
+        return
 
-my_quote = '"Jede Reise beginnt mit einem ersten Schritt"- Laotse'
-famous_quote(my_quote)
+    my_quote = '"Jede Reise beginnt mit einem ersten Schritt"- Laotse'
+    famous_quote(my_quote)
 
-print(my_quote.title())
-print(my_quote.upper())
-
-# *****************************************************************Ex.2
-# all calculations has the result 8
-print('\n' "Exercise2 - Number eight")
-
-
-def number_eight():
-    print("5 +3 =", 5 + 3)
-    print("11-3 =", 11 - 3)
-    print("2 * 4=", 2 * 4)
-    print("16/ 2=", int(16 / 2))
+    print(my_quote.title())
+    print(my_quote.upper())
 
 
-number_eight()
-
-# *****************************************************************Ex.3
-print('\n' "Exercise3 - Formatting")
 
 
-# function asks the name and the age and than print it to the console in different formats
-def name_age():
-    name = input("Enter your name: ")
 
-    while True:
-        try:
-            age = int(input("Enter your age :"))
-            if 0 < age < 201:
-                break
-            else:
+def exercise2():
+    # *****************************************************************Ex.2
+    # all calculations has the result 8
+    print('\n' "Exercise2 - Number eight")
+    def number_eight():
+        print("5 +3 =", 5 + 3)
+        print("11-3 =", 11 - 3)
+        print("2 * 4=", 2 * 4)
+        print("16/ 2=", int(16 / 2))
+
+    number_eight()
+
+
+def exercise3():
+    # *****************************************************************Ex.3
+    print('\n' "Exercise3 - Formatting")
+
+    # function asks the name and the age and than print it to the console in different formats
+    def name_age():
+        name = input("Enter your name: ")
+
+        while True:
+            try:
+                age = int(input("Enter your age :"))
+                if 0 < age < 201:
+                    break
+                else:
+                    print("That's not a valid option!Only numbers between 1-200, please!")
+            except ValueError:
                 print("That's not a valid option!Only numbers between 1-200, please!")
-        except ValueError:
-            print("That's not a valid option!Only numbers between 1-200, please!")
 
-    text1 = "Hello, "
-    text2 = ". You are "
-    text3 = " years old."
+        text1 = "Hello, "
+        text2 = ". You are "
+        text3 = " years old."
 
-    print("Hello, {}. You are {} years old.".format(name.title(), age))
-    print(text1 + name + text2 + str(age) + text3)
-    print(f"Hello, {name.upper()}. You are {age} years old.")
+        print("Hello, {}. You are {} years old.".format(name.title(), age))
+        print(text1 + name + text2 + str(age) + text3)
+        print(f"Hello, {name.upper()}. You are {age} years old.")
 
-
-name_age()
-
-# *****************************************************************Ex.4
-print('\n' "Exercise4 - Swap 2 numbers")
+    name_age()
 
 
-def swap_integers():
-    x = enter_number("x")
-    y = enter_number("y")
+def exercise4():
+    # *****************************************************************Ex.4
+    print('\n' "Exercise4 - Swap 2 numbers")
 
-    a = x  # a stores the value of x during swap
-    x = y
-    y = a
-    print('\n' "After swap:")
-    print("x= ", x)
-    print("y= ", y)
+    def swap_integers():
+        x = enter_number("x")
+        y = enter_number("y")
+
+        a = x  # a stores the value of x during swap
+        x = y
+        y = a
+        print('\n' "After swap:")
+        print("x= ", x)
+        print("y= ", y)
+
+    swap_integers()
 
 
-swap_integers()
+def exercise5():
+    # *****************************************************************Ex.5
+    print('\n' "Exercise5 - Modulo check")
 
-# *****************************************************************Ex.5
-print('\n' "Exercise5 - Modulo check")
+    def check_numbers(my_number1, my_number2):
+        number1_mod6 = my_number1 % 6
+        number1_mod10 = my_number1 % 10
+        number2_mod6 = my_number2 % 6
+        number2_mod10 = my_number2 % 10
+
+        result_mod6 = False
+        result_mod10 = False
+
+        if number1_mod6 == 0 or number2_mod6 == 0:
+            print("Minimum one number is dividable by 6")
+            result_mod6 = True
+        else:
+            print("None of these numbers is dividable by 6")
+
+        if number1_mod10 == 0 and number2_mod10 == 0:
+            print("Both numbers are dividable by 10")
+            result_mod10 = True
+        else:
+            print("Both numbers are not dividable by 10")
+
+        if result_mod6 and result_mod10:
+            return True
+
+        return False
+
+    number1 = enter_number("number1")
+    number2 = enter_number("number2")
+    check_numbers(number1, number2)
 
 
-def check_numbers(my_number1, my_number2):
-    number1_mod6 = my_number1 % 6
-    number1_mod10 = my_number1 % 10
-    number2_mod6 = my_number2 % 6
-    number2_mod10 = my_number2 % 10
+def exercise6():
+    # *****************************************************************Ex.6
+    print('\n' "Exercise6 - Summarizer")
 
-    result_mod6 = False
-    result_mod10 = False
+    def sum_up(sumup_from, sumup_to):
+        if sumup_to < sumup_from:
+            print("Not valid interval, the second number is smaller than the first! Try it again!")
 
-    if number1_mod6 == 0 or number2_mod6 == 0:
-        print("Minimum one number is dividable by 6")
-        result_mod6 = True
+        else:
+            total = 0
+            for x in range(sumup_from, sumup_to + 1):
+                total = total + x
+                print(f"+  {x} ")
+
+            print(f"= {total}")
+
+    number1 = enter_number("sum up from")
+    number2 = enter_number("sum up to")
+    sum_up(number1, number2)
+
+
+def exercise7():
+    # *****************************************************************Ex.7
+    print('\n' "Exercise7 - Sequencer")
+
+    def sequence(snum):
+        new_sequence = ""
+        if snum < 0 or snum > 9:
+            print("Number must be between 0 and 9. Please try it again")
+
+        else:
+            for i in range(0, 10):
+                if i != snum:
+                    new_sequence = new_sequence + str(i) + " "
+
+        print(new_sequence)
+
+    dropout = number_between("I want to drop out the number ", 0, 9)
+
+    sequence(dropout)
+
+
+def exercise8():
+    # *****************************************************************Ex.8
+    print('\n' "Exercise8  - String check")
+
+    def check_string(text):
+        # function to check if an "a" to find  on first and last position
+
+        if text.upper().endswith("A") or text.upper()[0] == "A":
+            return True
+
+    my_text = input("Enter a text for checking: ")  # asking for enter a text
+
+    if check_string(my_text):  # check the text and write the result to the console
+        print("Your text was checked. There is an 'A' on the first or last place!")
     else:
-        print("None of these numbers is dividable by 6")
-
-    if number1_mod10 == 0 and number2_mod10 == 0:
-        print("Both numbers are dividable by 10")
-        result_mod10 = True
-    else:
-        print("Both numbers are not dividable by 10")
-
-    if result_mod6 and result_mod10:
-        return True
-
-    return False
+        print("Your text was checked. The first and last character is not an 'A'")
 
 
-number1 = enter_number("number1")
-number2 = enter_number("number2")
-check_numbers(number1, number2)
+def exercise9():
+    # *****************************************************************Ex.9
+    print('\n' "Exercise9  -  ASCII Art")
 
-# *****************************************************************Ex.6
-print('\n' "Exercise6 - Summarizer")
+    def triangle(rows):
+        for x in range(0, rows):
+            print((x + 1) * "*  ")
 
+    my_rows = number_between(" rows for triangle", 1, 80)
 
-def sum_up(sumup_from, sumup_to):
-    if sumup_to < sumup_from:
-        print("Not valid interval, the second number is smaller than the first! Try it again!")
-
-    else:
-        total = 0
-        for x in range(sumup_from, sumup_to + 1):
-            total = total + x
-            print(f"+  {x} ")
-
-        print(f"= {total}")
+    triangle(my_rows)
 
 
-number1 = enter_number("sum up from")
-number2 = enter_number("sum up to")
-sum_up(number1, number2)
+def start_exercise():
+    print("Please choose an Exercise!")
+    selection=0
 
-# *****************************************************************Ex.7
-print('\n' "Exercise7 - Sequencer")
+    while 0 <= selection <= 9:
+        print()
+        selection = number_between(" Exercise 1-9 or 0 to exit", 0, 9)
+        if selection == 1:
+            exercise1()
+        elif selection == 2:
+            exercise2()
+        elif selection == 3:
+            exercise3()
+        elif selection == 4:
+            exercise4()
+        elif selection == 5:
+            exercise5()
+        elif selection == 6:
+            exercise6()
+        elif selection == 7:
+            exercise7()
+        elif selection == 8:
+            exercise8()
+        elif selection == 9:
+            exercise9()
+        else:
+            print("Thank you for running my Exercise!")
+            break
 
-
-def sequence(snum):
-    new_sequence = ""
-    if snum < 0 or snum > 9:
-        print("Number must be between 0 and 9. Please try it again")
-
-    else:
-        for i in range(0, 10):
-            if i != snum:
-                new_sequence = new_sequence + str(i) + " "
-
-    print(new_sequence)
-
-
-dropout = number_between("I want to drop out the number ", 0, 9)
-
-sequence(dropout)
-
-# *****************************************************************Ex.8
-print('\n' "Exercise8  - String check")
-
-
-def check_string(text):
-    # function to check if an "a" to find  on first and last position
-
-    if text.upper().endswith("A") or text.upper()[0] == "A":
-        return True
-
-
-my_text = input("Enter a text for checking: ")  # asking for enter a text
-
-if check_string(my_text):  # check the text and write the result to the console
-    print("Your text was checked. There is an 'A' on the first or last place!")
-else:
-    print("Your text was checked. The first and last character is not an 'A'")
-
-# *****************************************************************Ex.9
-print('\n' "Exercise9  -  ASCII Art")
-
-
-def triangle(rows):
-
-    for x in range(0, rows):
-        print((x+1)*"*  ")
-
-
-
-my_rows = number_between(" rows for triangle", 1, 80)
-
-triangle(my_rows)
+start_exercise()
