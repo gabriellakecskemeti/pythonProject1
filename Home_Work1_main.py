@@ -14,7 +14,6 @@ def enter_number(name_of_number):
     return number
 
 
-
 def number_between(name_of_number, between_from, between_to):
     """
     function asks an integer number in a given interval
@@ -34,8 +33,6 @@ def number_between(name_of_number, between_from, between_to):
                 print(f"That's not a valid option! Only numbers between {between_from} and {between_to}, please!")
         except ValueError:
             print("That's not a valid option! Only numbers between  {between_from} and {between_to} , please!")
-
-
 
 
 def exercise1():
@@ -59,13 +56,11 @@ def exercise1():
     print(my_quote.upper())
 
 
-
-
-
 def exercise2():
     # *****************************************************************Ex.2
     # all calculations has the result 8
     print('\n' "Exercise2 - Number eight")
+
     def number_eight():
         print("5 +3 =", 5 + 3)
         print("11-3 =", 11 - 3)
@@ -76,7 +71,10 @@ def exercise2():
 
 
 def exercise3():
-    # *****************************************************************Ex.3
+    """
+    The method asks your name and age, than formats the entered name and write to the console
+    :return:
+    """
     print('\n' "Exercise3 - Formatting")
 
     # function asks the name and the age and than print it to the console in different formats
@@ -105,7 +103,11 @@ def exercise3():
 
 
 def exercise4():
-    # *****************************************************************Ex.4
+    """
+    The method asks two numbers and then swaps them
+    swapped number will be printed to the console
+    :return:
+    """
     print('\n' "Exercise4 - Swap 2 numbers")
 
     def swap_integers():
@@ -123,51 +125,54 @@ def exercise4():
 
 
 def exercise5():
-    # *****************************************************************Ex.5
+    """
+    This method asks two numbers and it checks if the given numbers can be divided with 6 or 10
+    :return: if one of the numbers can be divided by 6 and one of the number can be divided
+     by 10 the function gives back True, otherwise it gives back False
+    """
     print('\n' "Exercise5 - Modulo check")
 
     def check_numbers(my_number1, my_number2):
-        number1_mod6 = my_number1 % 6
-        number1_mod10 = my_number1 % 10
-        number2_mod6 = my_number2 % 6
-        number2_mod10 = my_number2 % 10
 
         result_mod6 = False
         result_mod10 = False
 
-        if number1_mod6 == 0 or number2_mod6 == 0:
+        if my_number1 % 6 == 0 or my_number2 % 6 == 0:
             print("Minimum one number is dividable by 6")
             result_mod6 = True
         else:
             print("None of these numbers is dividable by 6")
 
-        if number1_mod10 == 0 and number2_mod10 == 0:
+        if my_number1 % 10 == 0 and my_number2 % 10==0:
             print("Both numbers are dividable by 10")
             result_mod10 = True
         else:
             print("Both numbers are not dividable by 10")
 
         if result_mod6 and result_mod10:
-            return True
+           return True
 
         return False
 
     number1 = enter_number("number1")
     number2 = enter_number("number2")
-    check_numbers(number1, number2)
+    print("Result of modulo check is: ", check_numbers(number1, number2))
 
 
 def exercise6():
-    # *****************************************************************Ex.6
+    """
+    The method asks an interval of integers and it sums up all numbers between the entered interval
+    :return:
+    """
     print('\n' "Exercise6 - Summarizer")
 
-    def sum_up(sumup_from, sumup_to):
-        if sumup_to < sumup_from:
+    def sum_up(sum_from, sum_to):
+        if sum_to < sum_from:
             print("Not valid interval, the second number is smaller than the first! Try it again!")
 
         else:
             total = 0
-            for x in range(sumup_from, sumup_to + 1):
+            for x in range(sum_from, sum_to + 1):
                 total = total + x
                 print(f"+  {x} ")
 
@@ -179,17 +184,20 @@ def exercise6():
 
 
 def exercise7():
-    # *****************************************************************Ex.7
+    """
+    The method drops out the entered value from the sequence 0-9 and writes the new sequence to the console
+    :return:
+    """
     print('\n' "Exercise7 - Sequencer")
 
-    def sequence(snum):
+    def sequence(s_num):
         new_sequence = ""
-        if snum < 0 or snum > 9:
+        if s_num < 0 or s_num > 9:
             print("Number must be between 0 and 9. Please try it again")
 
         else:
             for i in range(0, 10):
-                if i != snum:
+                if i != s_num:
                     new_sequence = new_sequence + str(i) + " "
 
         print(new_sequence)
@@ -200,7 +208,10 @@ def exercise7():
 
 
 def exercise8():
-    # *****************************************************************Ex.8
+    """
+    The method check the entered text if the character "a" or "A" to find in the first or in the last position.
+    :return:
+    """
     print('\n' "Exercise8  - String check")
 
     def check_string(text):
@@ -218,7 +229,10 @@ def exercise8():
 
 
 def exercise9():
-    # *****************************************************************Ex.9
+    """
+    The method write stars in the form of a triangle to the console
+    :return:
+    """
     print('\n' "Exercise9  -  ASCII Art")
 
     def triangle(rows):
@@ -230,33 +244,23 @@ def exercise9():
     triangle(my_rows)
 
 
-def start_exercise():
-    print("Please choose an Exercise!")
-    selection=0
-
-    while 0 <= selection <= 9:
-        print()
-        selection = number_between(" Exercise 1-9 or 0 to exit", 0, 9)
-        if selection == 1:
-            exercise1()
-        elif selection == 2:
-            exercise2()
-        elif selection == 3:
-            exercise3()
-        elif selection == 4:
-            exercise4()
-        elif selection == 5:
-            exercise5()
-        elif selection == 6:
-            exercise6()
-        elif selection == 7:
-            exercise7()
-        elif selection == 8:
-            exercise8()
-        elif selection == 9:
-            exercise9()
+def start_exercise(text, first_option, last_option):
+    """
+    Method, to select the exercise, what the user want to try
+    :param text: text to say to the user the interval
+    :param first_option: from option
+    :param last_option: to option
+    :return: ---
+    """
+    while True:
+        print("\nPlease choose an Exercise!")
+        selection = number_between(text, first_option, last_option)
+        if selection > 0:
+            # m_name=
+            globals()["exercise" + str(selection)]()
         else:
-            print("Thank you for running my Exercise!")
+            print("Thank you for running the program!")
             break
 
-start_exercise()
+
+start_exercise(" Exercise 1-9 or 0 to exit", 0, 9)
